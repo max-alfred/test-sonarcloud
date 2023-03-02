@@ -1,7 +1,8 @@
 def divide_numbers(num1, num2):
-    if num2 == 0:
-        return "Division by zero error!"
-    else:
+    if num2 != 0:
         return num1 / num2
+    else:
+        return "Division by zero error!"
+        
 
 divide_numbers(2, 0)
