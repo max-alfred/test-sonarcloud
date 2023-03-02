@@ -1,0 +1,23 @@
+name: SonarCloud Scan
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  SonarCloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: Run SonarCloud analysis
+        uses: SonarSource/sonarcloud-github-action@master
+        with:
+          organization: ${{ secrets.organization }}
+          project: ${{ secrets.project }}
+          token: ${{ secrets.SONAR_TOKEN }}
