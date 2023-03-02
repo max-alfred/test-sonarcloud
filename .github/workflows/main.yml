@@ -18,6 +18,6 @@ jobs:
       - name: Run SonarCloud analysis
         uses: SonarSource/sonarcloud-github-action@master
         with:
-          organization: ${{ secrets.organization }}
-          project: ${{ secrets.project }}
+          organization: ${{ secrets.ORGANIZATION }}
+          project: ${{ secrets.PROJECT }}
           token: ${{ secrets.SONAR_TOKEN }}
